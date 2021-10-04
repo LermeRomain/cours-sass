@@ -1,0 +1,144 @@
+////commentaire non compile
+//
+///*commentaire compile et visible*/
+//
+//
+///*Les variables*/
+//
+//:root{
+//  --secondary-color:red;
+//}
+//$primary-color: #64dc53;
+//$primary-font:Arial,Helvetica;
+//
+////utilisation des variables
+//
+//body{
+//  background-color: $primary-color;
+//  color: var(--secondary-color);
+//}
+
+@import "variable";
+@import "btn";
+@import "mixin";
+@import "media";
+@import "function";
+body{
+  background-color: $secondary-color;
+}
+h1{
+  color: $primary-color;
+  text-align: center;
+}
+
+
+//Imbrication
+
+nav{
+  background-color: white;
+  padding: 1rem;
+  border-radius: .3rem;
+  border: 1px solid $accent-color;
+
+  ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  li{
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  a{
+    color: $accent-color;
+    &:hover{
+      color: $primary-color;
+    }
+  }
+
+  p{
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+    .text-accent{
+      color: $accent-color;
+    }
+  }
+}
+
+/** L'héritage **/
+
+%article{
+  width: 10rem;
+  border: 1px solid grey;
+  padding: 1rem 2rem;
+  margin-top: .2rem;
+  margin-bottom: .2rem;
+  color: white;
+  background-color: grey;
+}
+
+.article-warning{
+  @extend %article;
+  background-color: orange;
+}
+.article-default{
+  @extend %article;
+  background-color: blue;
+}.article-danger{
+   @extend %article;
+   background-color: violet;
+ }
+.article-primary{
+  @extend %article;
+  background-color: green;
+}
+
+/* Les mixins */
+
+/*
+Comme l'héritag permet de partager des regles de css dans plusieurs feuilles de styles
+mais plus puissantes car elles utilisent des arguments
+elles sont definies par @mixin nom{...}
+*/
+
+.blocMixins{
+  ul{
+    @include reset-list;
+    @include inline-list;
+  }
+}
+
+/** Mixin et @content **/
+
+
+.blocMixins{
+  @include xs{
+    background-color: white;
+  }
+  @include xl{
+    background-color: green;
+  }
+}
+
+h2{
+  @include xs{
+    color: white;
+  }
+  @include xl{
+    color: red;
+  }
+}
+
+/** Mixin et paramètres **/
+
+nav{
+  @include responsive(xs){
+    background-color: white;
+  }
+
+  @include responsive(xl){
+    background-color: violet;
+  }
+}

@@ -1,0 +1,13 @@
+@mixin reset-list{
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin inline-list($color:#fff){
+  li{
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: $color;
+  }
+}
+

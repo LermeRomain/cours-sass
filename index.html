@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sass</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hello</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <p>Welcome in the <span class="text-accent">Jungle</span> !</p>
+        </nav>
+    </header>
+<main>
+    <section>
+        <h2>Les selecteurs parents</h2>
+        <button class="btn btn-primary">1</button>
+        <button class="btn btn-danger">2</button>
+        <button class="btn btn-warning">3</button>
+        <button class="btn btn-default">4</button>
+    </section>
+
+    <section>
+        <h2>L'héritage</h2>
+        <article class="article-primary">Lorem ipsum dolor</article>
+        <article class="article-danger">Lorem ipsum dolor</article>
+        <article class="article-warning">Lorem ipsum dolor</article>
+        <article class="article-default">Lorem ipsum dolor</article>
+    </section>
+
+    <section class="blocMixins">
+        <h2>Les mixins</h2>
+            <ul>
+                <li>items1</li>
+                <li>items2</li>
+                <li>items3</li>
+                <li>items4</li>
+                <li>items5</li>
+            </ul>
+    </section>
+
+    <section class="blocFunction">
+        <h2>Les fonctions</h2>
+        <div class="box-random"></div>
+        <div class="box-color">
+            <span class="box-color-1"></span>
+            <span class="box-color-2"></span>
+            <span class="box-color-3"></span>
+        </div>
+        <div class="box-function"></div>
+    </section>
+</main>
+</body>
+</html>

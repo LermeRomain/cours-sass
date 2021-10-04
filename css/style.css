@@ -1,0 +1,182 @@
+@charset "UTF-8";
+.btn {
+  border: 0;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  min-width: 100px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btn-warning {
+  background-color: orange;
+}
+.btn-primary {
+  background-color: blue;
+}
+.btn-danger {
+  background-color: violet;
+}
+.btn-default {
+  background-color: yellow;
+}
+
+/* Mixin et arguments */
+/* Fonction sass random() retourne un nb aléatoire entre 0 et 1 si il na pas d'arguments
+  Si on lui donne un argument plus grand que 1 la reponse sera aléatoire entre 1 et l'argument
+*/
+.box-function, .box-color-3, .box-color-2, .box-color-1, .box-random {
+  height: 10rem;
+}
+
+.box-random {
+  background-color: #cb7555;
+}
+
+.box-color-3, .box-color-2, .box-color-1 {
+  display: inline-block;
+  width: 30%;
+  margin: 1%;
+}
+
+.box-color-1 {
+  background-color: #0000cc;
+}
+
+.box-color-2 {
+  background-color: #0000cc;
+}
+
+.box-color-3 {
+  background-color: #6666ff;
+}
+
+/* creation de function sass*/
+.box-function {
+  background-color: purple;
+  margin: 3rem;
+}
+
+body {
+  background-color: red;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+nav {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid green;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+nav li {
+  display: inline-block;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+nav a {
+  color: green;
+}
+nav a:hover {
+  color: black;
+}
+nav p {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+nav p .text-accent {
+  color: green;
+}
+
+/** L'héritage **/
+.article-primary, .article-danger, .article-default, .article-warning {
+  width: 10rem;
+  border: 1px solid grey;
+  padding: 1rem 2rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  color: white;
+  background-color: grey;
+}
+
+.article-warning {
+  background-color: orange;
+}
+
+.article-default {
+  background-color: blue;
+}
+
+.article-danger {
+  background-color: violet;
+}
+
+.article-primary {
+  background-color: green;
+}
+
+/* Les mixins */
+/*
+Comme l'héritag permet de partager des regles de css dans plusieurs feuilles de styles
+mais plus puissantes car elles utilisent des arguments
+elles sont definies par @mixin nom{...}
+*/
+.blocMixins ul {
+  padding-left: 0;
+  list-style: none;
+}
+.blocMixins ul li {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+/** Mixin et @content **/
+@media only screen and (max-width: 500px) {
+  .blocMixins {
+    background-color: white;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .blocMixins {
+    background-color: green;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  h2 {
+    color: white;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  h2 {
+    color: red;
+  }
+}
+
+/** Mixin et paramètres **/
+@media only screen and (max-width: 500px) {
+  nav {
+    background-color: white;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  nav {
+    background-color: violet;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

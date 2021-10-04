@@ -1,0 +1,25 @@
+.btn{
+  &:hover{
+    opacity: .8;
+  }
+  border: 0;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  min-width: 100px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  &-warning{
+    background-color: orange;
+  }
+  &-primary{
+    background-color: blue;
+  }
+  &-danger{
+    background-color: violet;
+  }
+  &-default{
+    background-color: yellow;
+  }
+}

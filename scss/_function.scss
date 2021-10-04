@@ -1,0 +1,52 @@
+/* Fonction sass random() retourne un nb aléatoire entre 0 et 1 si il na pas d'arguments
+  Si on lui donne un argument plus grand que 1 la reponse sera aléatoire entre 1 et l'argument
+*/
+
+$random-color: rgb(random(255), random(255), random(255));
+
+%box{
+  height: 10rem;
+}
+.box-random{
+  @extend %box;
+  background-color:$random-color;
+}
+
+$main-color: blue;
+$dark-main-color: darken(blue, 10%);
+$light-main-color: lighten(blue, 20%);
+
+%box-color{
+  @extend %box;
+  display: inline-block;
+  width: 30%;
+  margin: 1%;
+}
+
+.box-color-1{
+  @extend %box-color;
+  background-color: $dark-main-color;
+}
+
+.box-color-2{
+  @extend %box-color;
+  background-color: $dark-main-color;
+}
+
+.box-color-3{
+  @extend %box-color;
+  background-color: $light-main-color;
+}
+
+/* creation de function sass*/
+
+
+@function sum($arg1, $arg2){
+  @return $arg1+$arg2;
+}
+
+.box-function{
+  @extend %box;
+  background-color: purple;
+  margin: sum(1, 2)+rem;
+}
